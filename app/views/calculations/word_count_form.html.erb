@@ -1,0 +1,30 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">New Word Count Calculation</h3>
+  </div>
+  <div class="panel-body">
+    <form action="/word_count/results" class="form-horizontal">
+
+      <div class="form-group">
+        <label for="user_text" class="col-sm-2 control-label">Text</label>
+        <div class="col-sm-10">
+          <textarea name="user_text" class="form-control" rows="3" placeholder="Enter your text" id="user_text"></textarea>
+        </div>
+      </div>
+
+      <div class="form-group">
+          <label for="user_word" class="col-sm-2 control-label">Special Word (optional)</label>
+          <div class="col-sm-10">
+            <input name="user_word" type="name" class="form-control" id="user_word" placeholder="Enter a word to count the occurrences of">
+          </div>
+        </div>
+
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button type="submit" class="btn btn-primary btn-block">Submit</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>

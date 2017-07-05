@@ -1,0 +1,37 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">New Loan Payment Calculation</h3>
+  </div>
+  <div class="panel-body">
+    <form action="/loan_payment/results" class="form-horizontal">
+
+      <div class="form-group">
+        <label for="annual_percentage_rate" class="col-sm-2 control-label">APR</label>
+        <div class="col-sm-10">
+          <input name="annual_percentage_rate" type="number" step="any" class="form-control" id="annual_percentage_rate" placeholder="Enter the APR of the loan (as a percent)">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="number_of_years" class="col-sm-2 control-label">Years</label>
+        <div class="col-sm-10">
+          <input name="number_of_years" type="number" min="1" class="form-control" id="number_of_years" placeholder="Enter the number of years to repay the loan">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="principal_value" class="col-sm-2 control-label">Principal</label>
+        <div class="col-sm-10">
+          <input name="principal_value" type="number" min="1" class="form-control" id="principal_value" placeholder="Enter the principal of the loan">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button type="submit" class="btn btn-primary btn-block">Submit</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>

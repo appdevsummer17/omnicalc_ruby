@@ -49,6 +49,7 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'pry-rails'
   gem 'grade_runner', github: 'firstdraft/grade_runner'
+  gem 'web_git', github: 'firstdraft/web_git'
 end
 
 group :development do
@@ -60,7 +61,6 @@ group :development do
   gem 'letter_opener'
   gem 'meta_request'
   gem 'wdm', platforms: [:mingw, :mswin, :x64_mingw]
-  gem 'web_git', github: 'firstdraft/web_git'
 end
 
 group :test do

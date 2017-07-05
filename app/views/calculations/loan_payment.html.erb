@@ -1,0 +1,20 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Loan Payment Results</h3>
+  </div>
+  <div class="panel-body">
+    <dl class="dl-horizontal">
+      <dt>APR</dt>
+      <dd><%= @apr %>%</dd>
+
+      <dt>Number of years</dt>
+      <dd><%= @years %></dd>
+
+      <dt>Principal</dt>
+      <dd><%= number_to_currency(@principal) %></dd>
+
+      <dt>Monthly Payment</dt>
+      <dd><%= number_to_currency(@monthly_payment) %></dd>
+    </dl>
+  </div>
+</div>

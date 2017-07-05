@@ -1,0 +1,43 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Word Count Results</h3>
+  </div>
+  <div class="panel-body">
+    <dl class="dl-horizontal">
+      <dt>
+        Text
+      </dt>
+      <dd class="text">
+        <%= simple_format(@text) %>
+      </dd>
+
+      <dt>
+        Word Count
+      </dt>
+      <dd class="word_count">
+        <%= @word_count %>
+      </dd>
+
+      <dt>
+        Character Count (with spaces)
+      </dt>
+      <dd class="character_count_with_spaces">
+        <%= @character_count_with_spaces %>
+      </dd>
+
+      <dt>
+        Character Count (without spaces)
+      </dt>
+      <dd class="character_count_without_spaces">
+        <%= @character_count_without_spaces %>
+      </dd>
+
+      <dt>
+        Occurrences of <code><%= @special_word %></code>
+      </dt>
+      <dd class="occurrences">
+        <%= @occurrences %>
+      </dd>
+    </dl>
+  </div>
+</div>

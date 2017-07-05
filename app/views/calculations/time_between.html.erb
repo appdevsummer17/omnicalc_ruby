@@ -1,0 +1,32 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Time Between Results</h3>
+  </div>
+  <div class="panel-body">
+    <dl class="dl-horizontal">
+      <dt>Starting Time</dt>
+      <dd><%= @starting.strftime("%l:%M%P on %B %e, %Y") %></dd>
+
+      <dt>Ending Time</dt>
+      <dd><%= @ending.strftime("%l:%M%P on %B %e, %Y") %></dd>
+
+      <dt>Seconds</dt>
+      <dd><%= @seconds %></dd>
+
+      <dt>Minutes</dt>
+      <dd><%= @minutes %></dd>
+
+      <dt>Hours</dt>
+      <dd><%= @hours %></dd>
+
+      <dt>Days</dt>
+      <dd><%= @days %></dd>
+
+      <dt>Weeks</dt>
+      <dd><%= @weeks %></dd>
+
+      <dt>Years</dt>
+      <dd><%= @years %></dd>
+    </dl>
+  </div>
+</div>
