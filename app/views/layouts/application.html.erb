@@ -1,14 +1,100 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>OmnicalcRuby</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>Omnicalc</title>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <!-- Connect to Bootstrap CSS -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
-  <body>
-    <%= yield %>
-  </body>
+  <!-- Connect to Font Awesome CSS -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+  <!-- Connect to Bootstrap Javascript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+
+</head>
+<body>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">
+          <i class="fa fa-calculator"></i>
+          Omnicalc
+        </a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav visible-xs visible-sm">
+          <li>
+            <a href="/word_count/new">
+              <i class="fa fa-book"></i>
+              <span>Word Count</span>
+            </a>
+          </li>
+          <li>
+            <a href="/loan_payment/new">
+              <i class="fa fa-money"></i>
+              <span>Loan Payment</span>
+            </a>
+          </li>
+          <li>
+            <a href="/time_between/new">
+              <i class="fa fa-clock-o"></i>
+              <span>Time Between</span>
+            </a>
+          </li>
+          <li>
+            <a href="/descriptive_statistics/new">
+              <i class="fa fa-bar-chart"></i>
+              <span>Descriptive Statistics</span>
+            </a>
+          </li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 hidden-xs hidden-sm">
+        <div class="list-group">
+          <a href="/word_count/new" class="list-group-item">
+            <i class="fa fa-book"></i>
+            Word Count
+          </a>
+          <a href="/loan_payment/new" class="list-group-item">
+            <i class="fa fa-money"></i>
+            Loan Payment
+          </a>
+          <a href="/time_between/new" class="list-group-item">
+            <i class="fa fa-clock-o"></i>
+            Time Between
+          </a>
+          <a href="/descriptive_statistics/new" class="list-group-item">
+            <i class="fa fa-bar-chart"></i>
+            Descriptive Statistics
+          </a>
+        </div>
+      </div>
+      <div class="col-md-9">
+        <%= yield %>
+      </div>
+    </div>
+  </div>
+</body>
 </html>
