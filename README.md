@@ -56,6 +56,6 @@ It is a collection of calculators that do various things; count the number of wo
  1. Next, work on the [Loan Payment calculator](http://localhost:3000/loan_payment/new). You'll again be working in the same file, `/app/controllers/calculations_controller.rb`. This time, scroll down to the method `def loan_payment` and write your code in there as indicated by the comments.
  1. Some tasks are easier, some are much harder. For example, in the Descriptive Statistics calculator, finding the mode (the number that occurs most frequently in a list of numbers) is surprisingly hard. Do your best, but don't get discouraged if you can't quite solve it.
  1. For the mode calculation, just worry about the simplest case; when there's one number that occurs most frequently, that should be shown as the mode. I won't be testing the case that there's a tie.
- 1. Commit and sync your work often in the GitHub Desktop app (I usually do so when I finish a task, so that I can embark on the next task freely and know that if I mess things up I can just go back to the previous snapshot.)
- 1. Run `rails grade` as often as you like to see how you are doing, and at the end to get your final score into Canvas.
+ 1. Make lots of commits and Push them to GitHub as you are working.
+ 1. I suggest making a new branch for every new feature that you start working on.
  1. Ask lots of questions!
