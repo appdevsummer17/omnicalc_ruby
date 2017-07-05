@@ -1,23 +1,66 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %|
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
 en:
   hints:
-    copy_must_match: Make sure that the text exactly matches the target, including capitalization.
-    button_type: If you're not being sent anywhere when you click submit and you have an attribute `type="button"` on your `<button>` element, try removing it or changing it to `type="submit"`. Also, ensure that the `<button>` is within the `<form></form>`.
-    label_for_input: Make sure that you have a `for=""` attribute on each `<label>` and that it matches the `id=""` attribute on the corresponding `<input>`; otherwise our test won't know which input goes with which label (and neither would screen readers, etc).
-    names_for_inputs: |
-                      Give each `<input>` in your form a unique `name=""` attribute.
+    two: |
+         Any contiguous chunk of non-whitespace characters counts as a "word". "Whitespace characters" include newlines (`\n`), tabs (`\t`), carriage returns (`\r`), etc.
 
-                      `name=""` is the crucial, functional attribute of an `<input>` that determines what the user's input gets labeled as in the query string, and therefore what key it gets stored under in the `params` hash, and therefore how you will access it in your next RCAV.
+         `String` has a handy method called [split](https://apidock.com/ruby/String/split) that might help with all this; experiment with it in `rails console`!
+    three: "Don't count newlines (`\\n`) or carriage returns (`\\r`) at the end of the string (this is only an issue depending on certain users' browsers). [`String` has a `.chomp` method](https://apidock.com/ruby/String/chomp) that is perfect for taking care of these pesky trailing characters."
+    four: |
+          To remove characters that appear in places other than at the end of a `String`, `.chomp` won't do. Instead, try out the `.gsub` method in `rails console`:
 
-                      `placeholder=""`, etc, are nice attributes to use on an `<input>` in order to be user-friendly; but `name=""` is the essential one that you _must_ include.
-    number_to_currency: Rails has a handy helper method called [`number_to_currency()`](https://apidock.com/rails/ActionView/Helpers/NumberHelper/number_to_currency) that is available within `.html.erb` files.
-    number_to_percentage: Rails has a handy helper method called [`number_to_percentage()`](https://apidock.com/rails/ActionView/Helpers/NumberHelper/number_to_percentage) that is available within `.html.erb` files.
-    params_are_strings: Raw values from the `params` hash are all `String`s, so you may have to do some conversions using methods like [`.to_i`](https://apidock.com/ruby/String/to_i) or [`.to_f`](https://apidock.com/ruby/String/to_f) or [`Date.parse()`](https://apidock.com/ruby/Date/parse/class) before you perform any computations.
-    round: Ruby `Float`s have a [`.round()` method](https://apidock.com/ruby/Float/round) that you can use anywhere.
-    value_attribute: Use the `value=""` attribute to pre-populate an `<input>`.
-    embed_vs_interpolate: Remember, ERB tags `<%= %>` are only for use within `.html.erb` embedded Ruby HTML view templates. If you're trying to put together a Ruby string (like when you were trying to compose an API URL in Meteorologist), just use `+` or `#{}`.
-    redirect_vs_render: |
-                        The argument to the `render()` method is **a filename** of a `.html.erb` template file from within our `app/views` folder that we want to use to format the instance variables that we've defined within _this action_.
+          ```ruby
+          "well hello!".gsub("ll", "✌️")
+          ```
 
-                        The argument to the `redirect_to()` method is **a URL** that we want to send the user to which will trigger _a completely different action_.
+          Don't forget to remove _all_ sorts of whitespace from the string, including newlines (`\n`), tabs (`\t`), and carriage returns (`\r`)."
+    five: Read about [Ruby Count vs Length vs Size](https://rubyinrails.com/2014/01/15/ruby-count-vs-length-vs-size/), but please note that we prefer the style of including parentheses around method arguments, even though the linked blog post doesn't use them. So we prefer `c.count(7)`, not `c.count 7`.
+    six: |
+         Eventually, `gsub`bing every possible whitespace character one by one becomes impractical. However, `gsub` can also accept a **regular expression** as its first argument.
 
-                        Don't provide the `redirect_to()` method with a filename as an argument, or vice versa.
+         [Regular expressions](https://regexone.com/), or "regexes", are a very powerful way to search for _patterns_ within strings, and are almost a whole programming language unto themselves. In Ruby, regexes are wrapped in forward slashes, the way strings are wrapped in quotes.
+
+         We don't need to spend time learning regexes right now, but if you ever find yourself needing to detect particular _patterns_ within strings, then let them ring a bell. For now, the regex `/s+/` matches one or more contiguous whitespace characters. So, try something like
+
+         ```ruby
+         @text.gsub(/s+/, "")
+         ```
+
+         to strip out all whitespace before doing your other processing.
+    seven: |
+           Eventually, `gsub`bing every possible punctuation character one by one becomes impractical. However, `gsub` can also accept a **regular expression** as its first argument.
+
+           [Regular expressions](https://regexone.com/), or "regexes", are a very powerful way to search for _patterns_ within strings, and are almost a whole programming language unto themselves. In Ruby, regexes are wrapped in forward slashes, the way strings are wrapped in quotes.
+
+           We don't need to spend time learning regexes right now, but if you ever find yourself needing to detect particular _patterns_ within strings, then let them ring a bell. For now, the regex `/[^a-z0-9\s]/i` rejects any letter or digit. So, try something like
+
+           ```ruby
+           @text.gsub(/[^a-z0-9\s]/i, "")
+           ```
+
+           to strip out all punctuation before doing your other processing.
+    eight: You can find a formula for payment at the bottom of [this section](https://en.wikipedia.org/wiki/Mortgage_calculator#Monthly_payment_formula) on the Wikipedia article on Mortgage calculators. Remember to think about units — is our calculator thinking about basis points? Months? Years? Percentages? Cents? Dollars?
+    nine:  You can multiple and divide by `1.minute` rather than `60` if you like; Ruby encourages readable code.
+    ten: You can multiple and divide by `1.hour` rather than `3600` if you like; Ruby encourages readable code.
+    eleven: Look up how to calculate **population** variance, not _sample_ variance.
+    twelve: Look up how to calculate **population** standard deviation, not _sample_ standard deviation.
