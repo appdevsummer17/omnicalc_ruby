@@ -1,0 +1,12 @@
+machine:
+  timezone:
+    America/New_York
+  ruby:
+    version:
+      2.3.1
+database:
+  override:
+    - bin/setup
+test:
+  override:
+    - COVERAGE=true bin/rails grade_runner:runner
