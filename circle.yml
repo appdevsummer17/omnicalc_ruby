@@ -9,4 +9,4 @@ database:
     - bin/setup
 test:
   override:
-    - COVERAGE=true bin/rails grade
+    - COVERAGE=true bin/rails grade_runner:runner
