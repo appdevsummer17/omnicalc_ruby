@@ -11,7 +11,7 @@ class CalculationsController < ApplicationController
     # ================================================================================
 
 
-    @word_count = "Replace this string with your answer."
+    @word_count = @text.split.count
 
     @character_count_with_spaces = "Replace this string with your answer."
 
