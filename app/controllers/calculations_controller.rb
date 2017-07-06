@@ -17,7 +17,7 @@ class CalculationsController < ApplicationController
 
     @character_count_without_spaces = @text.gsub(" ","").size
 
-    @occurrences = @text.split.count(@special_word)
+    @occurrences = @text.downcase.gsub(/[^a-z0-9\s]/i,"").split.count(@special_word.downcase)
 
     # ================================================================================
     # Your code goes above.
@@ -38,7 +38,8 @@ class CalculationsController < ApplicationController
     # The principal value the user input is in the decimal @principal.
     # ================================================================================
 
-    @monthly_payment = (@principal*((1+(@apr/100))**(@years)))/(@years*12)
+    @apr_decimal = @apr/1200
+    @monthly_payment = (@apr_decimal/(1-(1+@apr_decimal)**(-1*@years*12)))*@principal
 
     # ================================================================================
     # Your code goes above.
