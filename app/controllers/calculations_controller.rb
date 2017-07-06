@@ -66,7 +66,7 @@ class CalculationsController < ApplicationController
     @hours = @minutes/60
     @days = @hours/24
     @weeks = @days/7
-    @years = @weeks/52
+    @years = @weeks/52 #hopefully this is done
 
     # ================================================================================
     # Your code goes above.
