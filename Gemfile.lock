@@ -75,6 +75,8 @@ GEM
     bootstrap (4.0.0.alpha6)
       autoprefixer-rails (>= 6.0.3)
       sass (>= 3.4.19)
+    bootstrap3-datetimepicker-rails (4.17.47)
+      momentjs-rails (>= 2.8.1)
     builder (3.2.3)
     byebug (9.0.6)
     callsite (0.0.11)
@@ -85,6 +87,7 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    chronic (0.10.2)
     coderay (1.1.1)
     concurrent-ruby (1.0.5)
     crack (0.4.3)
@@ -140,6 +143,8 @@ GEM
     mime-types-data (3.2016.0521)
     mini_portile2 (2.2.0)
     minitest (5.10.2)
+    momentjs-rails (2.17.1)
+      railties (>= 3.1)
     multi_json (1.12.1)
     nio4r (2.1.0)
     nokogiri (1.8.0)
@@ -262,8 +267,10 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   bootstrap (~> 4.0.0.alpha6)
+  bootstrap3-datetimepicker-rails
   byebug
   capybara
+  chronic
   dotenv-rails
   factory_girl_rails
   firstdraft_generators
@@ -274,6 +281,7 @@ DEPENDENCIES
   letter_opener
   listen (>= 3.0.5, < 3.2)
   meta_request
+  momentjs-rails
   pry-rails
   puma (~> 3.7)
   rails (~> 5.1.2)
