@@ -17,7 +17,7 @@ class CalculationsController < ApplicationController
 
     @character_count_without_spaces = @text.gsub(/\s+/,"").length
 
-    @occurrences = "HELLO"
+    @occurrences = "HELLO you"
 
     # ================================================================================
     # Your code goes above.
