@@ -62,7 +62,7 @@ GEM
       activerecord (>= 3.2, < 6.0)
       rake (>= 10.4, < 13.0)
     arel (8.0.0)
-    autoprefixer-rails (7.1.2.1)
+    autoprefixer-rails (7.1.2.2)
       execjs
     awesome_print (1.8.0)
     better_errors (2.1.1)
