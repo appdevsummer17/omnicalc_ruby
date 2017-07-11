@@ -51,7 +51,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 group :development, :test do
   gem 'dotenv-rails'
   gem 'pry-rails'
-  gem 'grade_runner', github: 'firstdraft/grade_runner'
+  gem 'grade_runner', github: 'firstdraft/grade_runner', branch: "add-commit-sha"
   gem 'web_git', github: 'firstdraft/web_git'
 end
 
