@@ -78,4 +78,3 @@ gem 'font-awesome-sass', '~> 4.7.0'
 gem 'momentjs-rails'
 gem 'bootstrap3-datetimepicker-rails'
 gem 'chronic'
-
